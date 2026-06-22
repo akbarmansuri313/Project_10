@@ -112,8 +112,7 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
             res.addMessage(dto.getTableName() + " updated successfully..!!");
         } else {
             if (dto.getUniqueKey() != null && !dto.getUniqueKey().equals("")) {
-                T existDto = (T) baseService.findByUniqueKey(dto.getUniqueKey(), dto.getUniqueValue(),
-                        userContext);
+                T existDto = (T) baseService.findByUniqueKey(dto.getUniqueKey(), dto.getUniqueValue(),userContext);
                 if (existDto != null) {
                     res.setSuccess(false);
                     res.addMessage(dto.getLabel() + " already exist");
