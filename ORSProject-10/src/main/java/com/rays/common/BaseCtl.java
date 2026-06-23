@@ -48,6 +48,7 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
      * 
      * @param session HttpSession object
      */
+    
     @ModelAttribute
     public void setUserContext(HttpSession session) {
         userContext = (UserContext) session.getAttribute("userContext");
