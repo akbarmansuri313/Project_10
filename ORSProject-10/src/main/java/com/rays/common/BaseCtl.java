@@ -32,6 +32,7 @@ import com.rays.dto.UserDTO;
  * @param <T> DTO type extending BaseDTO
  * @param <S> Service type extending BaseServiceInt<T>
  */
+
 public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServiceInt<T>> {
 
     @Autowired

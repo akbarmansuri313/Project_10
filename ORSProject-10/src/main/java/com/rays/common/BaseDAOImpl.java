@@ -63,7 +63,6 @@ public abstract class BaseDAOImpl<T extends BaseDTO> implements BaseDAOInt<T> {
 
     /**
      * Adds a new record to the database.
-     * 
      * @param dto         DTO to persist
      * @param userContext UserContext of the logged-in user
      * @return ID of the newly created record
