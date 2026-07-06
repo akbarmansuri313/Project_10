@@ -1,0 +1,59 @@
+AJAX (Asynchronous JavaScript and XML) is a technique used in web development 
+to send and receive data from a server without reloading the entire web page.
+
+@RestController is a Spring annotation used to create RESTful web services.
+It combines @Controller and @ResponseBody, so the methods return data directly 
+(usually JSON) instead of a view.
+
+@Configuration is a Spring annotation used to define a class as a source 
+of bean definitions for the application context.
+It tells Spring that this class contains methods that create and configure beans.
+Methods annotated with @Bean inside a @Configuration class are managed 
+by the Spring container.
+
+@RequestBody is a Spring annotation used to bind the data from the HTTP request body 
+to a Java object.
+
+@Service is a Spring annotation used to mark a class as a service layer component, 
+which contains business logic.
+It is used to separate business logic from controllers and data access layers.
+
+@Repository is a Spring annotation used to indicate that the class is a Data Access Object. (DAO) 
+that handles interaction with the database.
+It marks the class as part of the persistence layer.
+It also provides exception translation, converting low-level database exceptions 
+into Spring’s data access exceptions.
+
+@RequestMapping maps HTTP requests to controller methods (for any HTTP method).
+@GetMapping maps HTTP GET requests to a method.
+@PostMapping maps HTTP POST requests to a method.
+
+@PathVariable binds a URL path variable to a method parameter.
+@RequestParam binds an HTTP request parameter to a method parameter.
+
+@Bean is a Spring annotation used to define a method that returns an object 
+managed as a bean by the Spring container.
+
+@SpringBootApplication is the entry point annotation that enables Spring Boot’s 
+core features like auto-configuration and component scanning.
+
+@ComponentScan scans the specified base packages and registers all detected components 
+as Spring beans.
+
+@Autowired is a Spring annotation used for automatic dependency injection by type.
+
+@Entity marks a class as a persistent object managed by JPA.
+
+@Transactional declares that all public methods in the class should run within 
+a transactional context managed by Spring.
+
+@MappedSuperclass is a JPA annotation used to mark a class whose properties are inherited 
+by entity classes but is not itself a database table.
+
+@Component is a Spring annotation used to mark a class as a Spring-managed bean.
+
+@ResponseBody tells Spring to send the method’s return value directly as the HTTP response body 
+(usually JSON).
+
+CORS (Cross-Origin Resource Sharing) is a browser security feature that controls 
+which origins can access resources on a server from a different domain.
