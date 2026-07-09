@@ -1,0 +1,193 @@
+package com.rays.form;
+
+import java.util.Date;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import com.rays.common.BaseDTO;
+import com.rays.common.BaseForm;
+import com.rays.dto.UserDTO;
+
+/**
+ * UserForm is a form class used for capturing and transferring user data
+ * from the presentation layer to the business layer.
+ * <p>
+ * This form extends BaseForm and includes validation constraints for fields
+ * like first name, last name, login ID, password, role, date of birth, gender,
+ * phone numbers, and status. It also provides a method to convert itself
+ * into a UserDTO object for persistence operations.
+ */
+public class UserForm extends BaseForm {
+
+    /** First name of the user (required) */
+    @NotEmpty(message = "First Name is required")
+    private String firstName;
+
+    /** Last name of the user (required) */
+    @NotEmpty(message = "Last Name is required")
+    private String lastName;
+
+    /** Login ID of the user (required) */
+    @NotEmpty(message = "Login Id is required")
+    private String loginId;
+
+    /** Password for the user account (required) */
+    @NotEmpty(message = "Password is required")
+    private String password;
+
+    /** Role ID assigned to the user (required, must be >= 1) */
+    @NotNull(message = "Role is required")
+    @Min(1)
+    private Long roleId;
+
+    /** Role name corresponding to the role ID */
+    private String roleName = null;
+
+    /** Date of birth of the user (required) */
+    @NotNull(message = "Date of birth is required")
+    private Date dob;
+
+    /** Gender of the user (required) */
+    @NotEmpty(message = "Gender is required")
+    private String gender;
+
+    /** Mobile phone number of the user (required, 10 digits) */
+    @NotNull(message = "Mobile No is required")
+    @Pattern(regexp = "(^$|[0-9]{10})")
+    private String phone;
+
+    /** Alternate mobile number of the user (required) */
+    @NotEmpty(message = "Alternate Mobile No is required")
+    private String alternateMobile;
+
+    /** Status of the user (required) */
+    @NotEmpty(message = "Status is required")
+    private String status;
+
+    
+    private Long imageId;
+    
+    // Getters and Setters
+
+    public Long getImageId() {
+		return imageId;
+	}
+
+	public void setImageId(Long imageId) {
+		this.imageId = imageId;
+	}
+
+	public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getLoginId() {
+        return loginId;
+    }
+
+    public void setLoginId(String loginId) {
+        this.loginId = loginId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAlternateMobile() {
+        return alternateMobile;
+    }
+
+    public void setAlternateMobile(String alternateMobile) {
+        this.alternateMobile = alternateMobile;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * Converts this form into a UserDTO object for persistence.
+     *
+     * @return a populated UserDTO instance containing the form data
+     */
+    @Override
+    public BaseDTO getDto() {
+
+        UserDTO dto = initDTO(new UserDTO());
+        dto.setFirstName(firstName);
+        dto.setLastName(lastName);
+        dto.setLoginId(loginId);
+        dto.setPassword(password);
+        dto.setRoleId(roleId);
+        dto.setRoleName(roleName);
+        dto.setDob(dob);
+        dto.setGender(gender);
+        dto.setPhone(phone);
+        dto.setAlternateMobile(alternateMobile);
+        dto.setStatus(status);
+
+        return dto;
+    }
+}
